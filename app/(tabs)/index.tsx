@@ -7,9 +7,9 @@ import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <main style={styles.titleContainer}>
-      <p>Aurelius Brandon Alexander Abuthan - 00000075101</p>
-    </main>
+    <ThemedView style={styles.titleContainer}>
+      <ThemedText>Aurelius Brandon Alexander Abuthan - 00000075101</ThemedText>
+    </ThemedView>
   );
 }
 
