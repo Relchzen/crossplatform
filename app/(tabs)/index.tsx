@@ -1,60 +1,55 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
+import { Image, StyleSheet, Platform, TextInput } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import Counter from '@/components/Counter';
+import { useState } from 'react';
+import Profile from '../../components/Profile';
 
 export default function HomeScreen() {
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('')
+  const [showProfile, setShowProfile] = useState(false)
+  
+  const handleIncrement = () => {
+    setCount(count + 1)
+  }
+
+  const handleDecrement = () => {
+    setCount(count - 1)
+  }
+
+  const handlePassValue = () => {
+    setShowProfile(true)
+  }
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        {showProfile && <Profile name={name} age={count} />}
+        <Counter value={count}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+        handleInput={handlePassValue}
+        />
+        <TextInput
+        style={styles.input}
+        placeholder='input your name here'
+        value={name}
+        placeholderTextColor={'#ffffff'}
+        onChangeText={(text) => setName(text)}
+        />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     gap: 8,
+    justifyContent: 'center',
+    padding: 20,
+    minHeight: '100%'
   },
   stepContainer: {
     gap: 8,
@@ -67,4 +62,11 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  input: {
+    width: '50%',
+    height: 32,
+    borderWidth: 1,
+    borderColor: '#FFFFFF',
+    color: '#FFFFFF',
+  }
 });
