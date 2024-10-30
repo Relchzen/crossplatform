@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "sourceImage": "https://www.phdmedia.com/romania/wp-content/uploads/sites/73/2022/03/Mark-Holden-PHD-Worldwide-Worldwide-Strategy-and-Planning-Director-1-e1636029869965.jpg"
+    },
+    {
+      "name": "Jason Smith",
+      "nim": "00000098765",
+      "sourceImage": "https://www.leisureopportunities.co.uk/images/995586_746594.jpg"
+    },
+    {
+      "name": "Michael Johnson",
+      "nim": "00000034567",
+      "sourceImage": "https://img.freepik.com/fotos-kostenlos/junger-baertiger-mann-mit-gestreiftem-hemd_273609-5677.jpg?w=826&t=st=1725423400~exp=1725424000~hmac=771f8ea1d884299d3527dfcbcf342c14437afae5f31d0848b96b48cc6226ac8a"
+    },
+    {
+      "name": "Emily Davis",
+      "email": "emilydavis@example.com",
+      "sourceImage": "https://img.freepik.com/fotos-kostenlos/maedchen-zeigt_23-2148168315.jpg?w=740&t=st=1725423422~exp=1725424022~hmac=d687fcdf3c2efe551a3896bae37c4f571c7960683fd8717b676e52f09cb92835"
+    },
+    {
+      "name": "William Brown",
+      "nim": "00000054321",
+      "sourceImage": "https://img.freepik.com/fotos-kostenlos/portraetmann-lacht_23-2148859448.jpg?w=740&t=st=1725423448~exp=1725424048~hmac=664491c88af1ce6b053c9f117a34085000f849d011e1c9f813a20eed9a68ac29"
+    }
+  ]
